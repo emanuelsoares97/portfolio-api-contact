@@ -8,7 +8,9 @@ from email.mime.text import MIMEText
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "https://emanuelsoares97.github.io/web-developer-portfolio"
+])
 
 EMAIL_FROM = os.getenv("EMAIL_FROM")
 EMAIL_TO = os.getenv("EMAIL_TO")
