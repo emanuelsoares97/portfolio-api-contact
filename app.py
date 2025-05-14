@@ -39,11 +39,11 @@ def contact():
             server.login(EMAIL_FROM, EMAIL_PASSWORD)
             server.send_message(msg)
 
-        return jsonify({"mensagem": "Mensagem enviada com sucesso!"}), 200
+        return jsonify({"message": "Message send!"}), 200
 
     except Exception as e:
         print("Erro ao enviar:", e)
-        return jsonify({"erro": "Erro ao enviar a mensagem"}), 500
+        return jsonify({"error": "Oops, something went wrong."}), 500
 
 if __name__ == "__main__":
     app.run()
