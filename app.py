@@ -14,6 +14,11 @@ EMAIL_FROM = os.getenv("EMAIL_FROM")
 EMAIL_TO = os.getenv("EMAIL_TO")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"status": "API está ativa"}), 200
+
+
 @app.route("/contact", methods=["POST"])
 def contact():
     data = request.json
